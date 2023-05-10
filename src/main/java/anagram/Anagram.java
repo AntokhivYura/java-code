@@ -1,4 +1,4 @@
-package FirstTask;
+package anagram;
 
 import java.util.Arrays;
 
