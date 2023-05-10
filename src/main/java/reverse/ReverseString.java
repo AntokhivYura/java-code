@@ -1,8 +1,12 @@
 package reverse;
 
-public class Reverse {
-
-
+public class ReverseString {
+    /**
+     * Returns reversed String
+     *
+     * @param stringValue
+     * @return reversed String
+     */
     public String reverseString(String stringValue) {
         if (stringValue == null || stringValue.isBlank()) {
             return "String is blank or null";
@@ -15,11 +19,5 @@ public class Reverse {
             afterReverse = tmp + afterReverse;
         }
         return afterReverse;
-    }
-
-
-    public static void main(String[] args) {
-        Reverse task = new Reverse();
-        System.out.println(task.reverseString("Lorem Ipsum"));
     }
 }

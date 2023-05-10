@@ -6,7 +6,13 @@ import java.util.List;
 import java.util.Set;
 
 public class RemoveDuplicates {
-
+    /**
+     * Removes duplicates from ArrayList by creating a new ArrayList
+     * and adding elements from first ArrayList if there is no such element
+     *
+     * @param list ArrayList of elements with duplicates
+     * @return ArrayList with no duplicates
+     */
     public List<String> removeDuplicates(List<String> list) {
         if (list == null || list.isEmpty()) {
             System.err.println("List is empty or null");
@@ -23,6 +29,12 @@ public class RemoveDuplicates {
         return listWithNoDuplicates;
     }
 
+    /**
+     * Removes duplicates from ArrayList by converting it to LinkedHashSet
+     *
+     * @param list ArrayList of elements with duplicates
+     * @return ArrayList with no duplicates
+     */
     public List<String> removeDuplicatesEasy(List<String> list) {
         if (list == null || list.isEmpty()) {
             System.err.println("List is empty or null");
@@ -33,21 +45,5 @@ public class RemoveDuplicates {
         list.addAll(listWithNoDuplicates);
 
         return list;
-    }
-
-
-    public static void main(String[] args) {
-        RemoveDuplicates duplicates = new RemoveDuplicates();
-
-        List<String> listWithDuplicates = new ArrayList<>();
-        listWithDuplicates.add("John");
-        listWithDuplicates.add("Sofie");
-        listWithDuplicates.add("Megan");
-        listWithDuplicates.add("John");
-        listWithDuplicates.add("Sofie");
-
-
-        System.out.println(duplicates.removeDuplicates(listWithDuplicates));
-        System.out.println(duplicates.removeDuplicatesEasy(listWithDuplicates));
     }
 }
