@@ -1,0 +1,9 @@
+{
+  "name": "John",
+  "sureName": "Wick",
+  "age": "37",
+  "address": {
+    "country": "Canada",
+    "state": "Alberta"
+  }
+}
