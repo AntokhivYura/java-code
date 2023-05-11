@@ -26,14 +26,14 @@ public class Student implements Comparable<Student> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Student student = (Student) o;
+        Student student = (Student) obj;
         return age == student.age && Objects.equals(name, student.name) && Objects.equals(sureName, student.sureName);
     }
 
