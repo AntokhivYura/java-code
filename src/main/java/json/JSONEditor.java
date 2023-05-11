@@ -34,7 +34,7 @@ public class JSONEditor {
         employee.setSureName(newSureName);
     }
 
-    public void setEmployeeAge(String newAge) {
+    public void setEmployeeAge(int newAge) {
         employee.setAge(newAge);
     }
 
@@ -50,7 +50,6 @@ public class JSONEditor {
         File fileToJSON = new File("src/main/resources/Employee.json");
         Address address = new Address("USA", "Texas");
         JSONEditor editor = new JSONEditor(fileToJSON);
-
         //Update address
         editor.setEmployeeAddress(address);
 

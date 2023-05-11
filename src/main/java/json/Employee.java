@@ -3,7 +3,7 @@ package json;
 public class Employee {
     private String name;
     private String sureName;
-    private String age;
+    private int age;
     private Address address;
 
     public String getName() {
@@ -22,11 +22,11 @@ public class Employee {
         this.sureName = sureName;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
