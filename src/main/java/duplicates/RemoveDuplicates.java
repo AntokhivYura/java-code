@@ -18,7 +18,7 @@ public class RemoveDuplicates {
             System.err.println("List is empty or null");
             return list;
         }
-        List<String> listWithNoDuplicates = new ArrayList<>(list.size());
+        List<String> listWithNoDuplicates = new ArrayList<>();
 
         for (String elem : list) {
             if (!listWithNoDuplicates.contains(elem)) {
