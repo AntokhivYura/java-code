@@ -8,9 +8,12 @@ import java.io.*;
 public class JSONEditor {
     private final Gson gson;
     private Employee employee;
+    private final File file;
 
     public JSONEditor(File file) {
+        this.file = file;
         gson = new GsonBuilder().setPrettyPrinting().create();
+
         try (Reader reader = new FileReader(file)) {
             employee = gson.fromJson(reader, Employee.class);
         } catch (IOException e) {
@@ -18,7 +21,22 @@ public class JSONEditor {
         }
     }
 
+    /**
+     * Write JSON file with updated object
+     * @param file location where to store JSON file
+     */
     public void writeObjectToJSONFile(File file) {
+        try (FileWriter writer = new FileWriter(file)) {
+            gson.toJson(employee, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Rewrite JSON file with updated object
+     */
+    public void rewriteJSONFile() {
         try (FileWriter writer = new FileWriter(file)) {
             gson.toJson(employee, writer);
         } catch (IOException e) {
@@ -53,8 +71,11 @@ public class JSONEditor {
         //Update address
         editor.setEmployeeAddress(address);
 
-        //write Employee with updated Address to the file
+        //write Employee with updated Address to the JSON file
         editor.writeObjectToJSONFile(fileToJSON);
+
+        //write Employee with updated Address to the same JSON
+        editor.rewriteJSONFile();
 
     }
 }
