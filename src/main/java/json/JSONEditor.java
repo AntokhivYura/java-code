@@ -51,8 +51,11 @@ public class JSONEditor {
         Address address = new Address("USA", "Texas");
         JSONEditor editor = new JSONEditor(fileToJSON);
 
+        //Update address
+        editor.setEmployeeAddress(address);
+
+        //write Employee with updated Address to the file
         editor.writeObjectToJSONFile(fileToJSON);
-        System.out.println(editor.getEmployee());
 
     }
 }
